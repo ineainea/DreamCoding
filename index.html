@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- head는 페이지에 대한 metadata를 포함하는 것. head에 내용은 페이지에 표시되지 않음 -->
+<head>
+    <!-- 문서에서 허용하는 문자집합을 표시함 -->
+    <!-- 전세계적인 character 집합으로 많은 언어들의 문자를 포함하고 있는 utf-8 사용. -->
+    <meta charset="UTF-8">
+    <!-- name, contnet: 저자와 설명을 추가 -->
+    <!-- name, 메타 요소가 어떤 정보의 형태를 가지고 있는지 알려줌 -->
+    <!-- content, 실제 메타데이터의 컨텐츠, 페이지 컨텐츠 관련  -->
+    <!-- 저자를 지정하는 것은 콘텐츠 작성자에 대한 정보를 볼 수 있게 해준다.  -->
+    <!-- 페이지 콘텐츠 관련 키워드를 포함시키는 것은 검색엔진에서 이 페이지가 더 많이 표시 될 가능성이 생기게 할 수 있다.  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- HTML 문서 전체릐 타이틀을 표현하기 위한 메타데이터 -->
+    <title>Practice</title>
+</head>
+<body>
+    <!--Box vs Item-->
+    <!--Box-->
+    <header></header>
+    <footer></footer>
+    <section></section>
+    <div></div>
+    <span></span>
+    
+    <!--Item-->
+    <h1></h1>
+    <button></button>
+    <!-- etc... -->
+
+    <!--문서 or 링크를 연결하는 a 태그-->
+    <!--a 태그에 속성값 hypertext reference, 연결할 주소를 지정하는 속성-->
+    <!--target 속성: 링크를 클릭할 때 창을 어떻게 열지 결정함.-->
+    <a href="https://google.com" target="_black">Click Me!!</a>
+
+    <!-- Block vs Inline -->
+    <!-- paragraph, 문단을 정의하는 p 태그 -->
+    <!-- 글자를 굵게 표시하는 b 태그, blod, 최신 표준은 b 태그보다 strong 태그를 권고 -->
+    <!-- b 태그는 Inline 태그 -->
+    <p>This is a sentence. <b>That</b> is ...</p>
+
+    <!-- CSS와 함께 쓰이는 span 태그 -->
+    <!-- diplay 속성 = Inline, 줄 바꿈이 되지 않음 -->
+    <p>This is a sentence. <span>That</span> is ...</p>
+    <!-- 레이아웃을 나누는데 쓰이는 div 태그, Division의 약자 -->
+    <!-- diplay 속성 = Block, 줄 바꿈이 일어남 -->
+    <!-- 가상의 레이아웃을 설계하는데 쓰이며, CSS와 연동하여 쓰임. -->
+    <p>This is a sentence. <div>That</div> is ...</p>
+
+    <!-- List (ol vs ul) -->
+    <!-- List 태그 ordered list, unordered list -->
+    <!-- List 아이템 li, 목록을 만드는 태그, 단독으로 쓰이지 않고 ol 또는 ul과 같이 쓰인다. -->
+    <!-- ol>li*3 -->
+    <!-- ol, ordered list 태그, 번호를 메겨 순서가 있는 목록을 만듬 -->
+    <!-- type 속성은 항목을 셀 때 사용할 카운터의 유형, a,A,i,I,1(숫자) 유형이 있음 -->
+    <!-- reversed, 목록의 순서 역전. 즉, 내부에 지정한 항목이 역순으로 배열된 것이지 나타냄. -->
+    <ol type="i" reversed>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+
+    <!-- ul, unordered list 태그, 순서없이 모양으로 목록을 만듬. -->
+    <!-- ul>li*3 -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <!-- Input and type -->
+    <!-- Input 태그, 사용자의 데이터를 받을 수 있는 대화형 컨트롤 -->
+    <!-- type에 따라 특성이 매우 달라짐, MDN input type 부분 참고 -->
+    <!-- label 태그, 사용자 인터페이스 항목의 설명을 나타냄. -->
+    <!-- for 속성: for의값과 id의 값이 같으면 연결됨, 그룹화-->
+    <!-- label, input 둘다 Inline -->
+    <label for="username">Name: 
+        <!-- input내 무수한 input 생성 가능, 그렇기떄문에 id를 통해 식별자를 만들어냄. -->
+        <input type="text" id="username">
+    </label>
+
+</body>
+</html>
