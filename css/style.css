@@ -132,3 +132,9 @@ h2 {
 {
     background-color: var(--color-dark-pink);
 }
+
+/* HOME */
+#home
+{
+    background-color: url('');
+}
