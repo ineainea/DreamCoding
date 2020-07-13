@@ -51,6 +51,14 @@ a
     color: var(--color-white);
 }
 
+button
+{
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
 ul
 {
     /* 목록 앞 마커를 정하는 속성 */
@@ -136,5 +144,32 @@ h2 {
 /* HOME */
 #home
 {
-    background-color: url('');
+    background: url('/images/homebackground.png') center/cover no-repeat;
+    padding: 40px;
+    text-align: center;
+}
+
+.home__avartar
+{
+    width: 200px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid var(--color-white);
+}
+
+.home__title,
+.home__description
+{
+    color: var(--color-white);
+}
+
+.home__contact
+{
+    font-size: var(--font-regular);
+    font-weight: var(--weight-semi-bold);
+    margin: 24px;
+    padding: 8px 12px;
+    border: 2px solid var(--color-white);
+    border-radius: 3px;
+    color: var(--color-white);
 }
