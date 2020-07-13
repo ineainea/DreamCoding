@@ -58,11 +58,11 @@
 
     <!-- About -->
     <!-- 프로필사진, 인삿말, 간단한 프로필 메세지, contact me -->
-    <section id="about">
+    <section id="about" class="section">
         <!-- 공통되는 부분은 따로 클래스 or id의 명칭을 지정하지 않는다. -->
         <h1>About me</h1>
         <p>
-            Javascript Full stack 개발자를 꿈꾸는 초보 개발자입니다. 현재 한국소프트웨어인재개발원(Kosmo) 라는 곳에서 Java, JSP, Spring를 활용한 Back-end를 공부하고 있으며, <p>
+            Javascript Full stack 개발자를 꿈꾸는 초보 개발자입니다.<p> 현재 한국소프트웨어인재개발원(Kosmo) 에서 Java, JSP, Spring를 활용한 Back-end를 공부하고 있으며, <p>
             개인적으로 Front-end 또한 공부하면서 Full-stack developer가 되기 위해 열심히 노력하고 있습니다!😄
         </p>
         <div class="about__majors">
@@ -70,32 +70,40 @@
                 <div class="major__icon">
                     <i class="fab fa-html5"></i>
                 </div>
-                <div class="major__title">Front-end</div>
+                <h2 class="major__title">Front-end</h2>
                 <div class="major__description">
                     HTML, CSS, Javascript
                 </div>
             </div>
             <div class="mjor">
                 <div class="major__icon">
-                    <i class="fab fa-html5"></i>
+                    <i class="fas fa-server"></i>
                 </div>
-                <div class="major__title">Back-end</div>
+                <h2 class="major__title">Back-end</h2>
                 <div class="major__description">
-                    Java, Jsp, Spring
+                    Java, Jsp, Spring, Tomcat, Oracle 11g
                 </div>
             </div>
         </div>
         <div class="about__school">
-            <img src="images/school/logo_center.png" 
-            alt="school" 
-            class="school__logo">
-            <p class="school__name"></p>
-            <p class="school__period"></p>
+            <div class="school">
+                <img src="images/school/logo_center.png" 
+                alt="school" 
+                class="school__logo">
+                <div class="school__description">
+                    <p class="school__name">
+                        한국소프트웨어인재개발원(Kosmo)에서 <오픈프레임워크 활용 디지털 융합 SW엔지니어> 과정을 수료.
+                    </p>
+                    <p class="school__period">
+                        2020.02.27 ~ 09.02
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Skills -->
-    <section id="skills">
+    <section id="skills" class="section">
         <h1>Skills</h1>
         <h2>Skills & Attribute</h2>
         <p>
@@ -168,7 +176,7 @@
         </div>
     </section>
     <!-- Work -->
-    <section id="work">
+    <section id="work" class="section">
         <h1>My Works</h1>
         <h3>Projects</h3>
         <div class="work__categories">
@@ -214,7 +222,7 @@
         </div>
     </section>
     <!-- Testmonials -->
-    <section id="testmonials">
+    <section id="testmonials" class="section">
         <!-- 제목부분 -->
         <h1>Testimonials</h1>
         <h3>See what they say about me</h3>
@@ -239,7 +247,7 @@
         </div>
     </section>
     <!-- Contact -->
-    <section id="contact">
+    <section id="contact" class="section">
         <h1 class="contact__title">Let's talk</h1>
         <h2 class="contact__email">ham2748@gmail.com</h2>
         <div class="contact__link">
