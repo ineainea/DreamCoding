@@ -503,3 +503,34 @@ h2 {
 {
     color: var(--color-pink);
 }
+
+/* Contact */
+#contact
+{
+    background-color: var(--color-pink);
+}
+
+.contact__title,
+.contact__email,
+.conntact__rights
+{
+    color: var(--color-white);
+}
+
+.contact__title
+{
+    margin: 32px;
+}
+
+.contact__link
+{
+    font-size: var(--font-large);
+    margin: 24px 0;
+    transition: all var(--animation-duration) ease-in;
+}
+
+.contact__link i:hover
+{
+    transform: scale(1.1);
+    color: var(--color-yellow);
+}
