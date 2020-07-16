@@ -464,9 +464,10 @@ h2 {
 }
 
 .testmonial
-{
+{   
+    width: 760px;
     display: flex;
-    margin: 32px 0;
+    margin: 32px auto;
 }
 
 .testmnial__avatar
