@@ -144,6 +144,20 @@ h2 {
     background-color: var(--color-dark-pink);
 }
 
+.navbar__toggle-btn
+{
+    /*기존 자리에서 빠져나와 자리를 잡음
+    top, left 등 자리를 지정해줘야함*/
+    /* 페이지의 사이즈가 768px 이상일때는 토글버튼이 안보임*/
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    font-size: 24px;
+    color: var(--color-white);
+    display: none;
+}
+
+
 /* HOME */
 #home
 {
@@ -534,4 +548,35 @@ h2 {
 {
     transform: scale(1.1);
     color: var(--color-yellow);
+}
+
+/* 반응형 */
+/* For below 768px screen width*/
+/* 스크린의 넓이가 768px 이하일 때 토글 버튼이 나타남*/
+/*스크린 사이즈가 작을때만 적용되는 스타일링*/
+@media screen and (max-width: 768px)
+{
+    .navbar__toggle-btn
+    {
+        display: block;
+    }
+    #navbar
+    {
+        /* 아래로 위치하게 만듬 */
+        /* column 일 떄는 중심축이 수직임
+        그래서 중심을 수평 반대쪽에서 정리해야함*/
+        flex-direction: column;
+        /*왼쪽으로 정렬함*/
+        align-items: flex-start;
+    }
+    /*메뉴 개당 하나씩 아래로*/
+    .navbar__menu
+    {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        /*토글버튼을 클릭 시 보여줘야 하기때문에 display: none 으로
+        평소에는 볼 수 없게 한다.*/
+        display: none;
+    }
 }
