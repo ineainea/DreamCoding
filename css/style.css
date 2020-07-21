@@ -479,9 +479,8 @@ h2 {
 
 .testmonial
 {   
-    width: 760px;
     display: flex;
-    margin: 32px auto;
+    margin: 32px 0;
 }
 
 .testmnial__avatar
@@ -578,5 +577,29 @@ h2 {
         /*토글버튼을 클릭 시 보여줘야 하기때문에 display: none 으로
         평소에는 볼 수 없게 한다.*/
         display: none;
+    }
+    .about__majors
+    {
+        flex-direction: column;
+    }
+    .major
+    {
+        margin-bottom: 38px;
+    }
+    .skillset
+    {
+        flex-direction: column;
+    }
+    /*화면을 가로로 꽉 차게 만듬
+    위에서 @media로 사이즈를 제한했기 때문에 해당 사이즈가 넘으면
+    flex-grow 효과는 사라짐*/
+    .project
+    {
+        flex-grow: 1;
+    }
+    .testmnial__avatar
+    {
+        width: 80px;
+        height: 80px;
     }
 }
