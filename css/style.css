@@ -114,6 +114,8 @@ h2 {
     color: var(--color-white);
     padding: 4px;
     transition: all var(--animation-duration) ease-in;
+    /* 가장 위의 위치에 올려놓음 */
+    z-index: 1;
 }
 
 #navbar.navbar--dark
