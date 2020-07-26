@@ -43,14 +43,28 @@ navbarMenu.addEventListener('click', (event) => {
     //변수 선언
     const target = event.target;
     const link = target.dataset.link;
-    //link가 null이거나 undifeined이면 실행x
+    //데이터 유무확인
     if(link == null){
         return;
     }
 
     //html에 저정한 변수의 데이터가 dataset 안에 할당됨
     // 속성을 넣어서 각각의 id를 연결시킴
-    console.log(event.target.dataset.link);
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({behavior: "smooth"});
+    //console.log(event.target.dataset.link);
+    //const scrollTo = document.querySelector(link);
+    //scrollTo.scrollIntoView({behavior: "smooth"});
+
+    scrollIntoView(link);
 });
+
+//Handle click on "contact me" button on home
+const homeContactBtn = document.querySelector('.home__contact');
+homeContactBtn.addEventListener('click', ()=> {
+    scrollIntoView('#contact');
+});
+
+//scrollIntoView()를 구현해서 해당 아이디값이 들어오면 함수아래 기능이 작동한다.
+function scrollIntoView(selector){
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior: "smooth"});
+}
