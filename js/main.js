@@ -11,8 +11,8 @@ const navbarHeight = navbar.getBoundingClientRect().height;
 /* 스크롤이 될때마다 함수를 호출한다.
 해당 함수는 아무런 인자를 받지 않고 함수를 실행 */
 document.addEventListener('scroll', () => {
-    console.log("Math.round(window.scrollY >> " + Math.round(window.scrollY));
-    console.log(`navbarHeight >>  ${navbarHeight}`);
+    //console.log("Math.round(window.scrollY >> " + Math.round(window.scrollY));
+    //console.log(`navbarHeight >>  ${navbarHeight}`);
 
     //스크롤바Y가 navbarHeight보다 클 경우
     if(window.scrollY > navbarHeight){
@@ -62,6 +62,24 @@ const homeContactBtn = document.querySelector('.home__contact');
 homeContactBtn.addEventListener('click', ()=> {
     scrollIntoView('#contact');
 });
+
+//Make home slowly fade to transparent as the window scrolls down
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+    //homeHeight >> 692.4000244140625
+    console.log('homeHeight >> : ' + homeHeight); 
+    // 1 - 0 / 800 = 1
+    // 1- 400 / 800 = 0.5
+    // 1 - 800 / 800 = 0
+    console.log(1 - window.scrollY / homeHeight);
+
+    home.style.opacity = 1 - window.scrollY / homeHeight;
+    
+});
+
+
+
 
 //scrollIntoView()를 구현해서 해당 아이디값이 들어오면 함수아래 기능이 작동한다.
 function scrollIntoView(selector){
