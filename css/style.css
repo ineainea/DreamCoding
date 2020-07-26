@@ -563,6 +563,30 @@ h2 {
     color: var(--color-yellow);
 }
 
+/* Scroll */
+.arrow-up
+{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 70px;
+    height: 70px;
+    font-size: 50px;
+    background-color: var(--color-pink);
+    color: var(--color-white);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+    /*안보일때는 클릭할 수 없도록 pointer event를 없앤다*/
+    pointer-events: none;
+}
+
+.arrow-up.visible
+{
+    opacity: 1;
+    pointer-events: auto;
+}
+
 /* 반응형 */
 /* For below 768px screen width*/
 /* 스크린의 넓이가 768px 이하일 때 토글 버튼이 나타남*/

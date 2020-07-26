@@ -78,8 +78,22 @@ document.addEventListener('scroll', () => {
     
 });
 
+//Show "arrow up" button when scrolling down
+const arrowUp = document.querySelector('.arrow-up');
+document.addEventListener('scroll', () => {
+    //scroll이 homeheight의 절반을 지났을 때
+    if(window.scrollY > homeHeight / 2){
+        //arrow-up 클래스에 visible 이라는 새로운 클래스를 추가한다.
+        arrowUp.classList.add('visible');
+    }else{
+        arrowUp.classList.remove('visible');
+    }
+});
 
-
+//Handle click on the "arrow up" button
+arrowUp.addEventListener('click', () => {
+    scrollIntoView("#home");
+});
 
 //scrollIntoView()를 구현해서 해당 아이디값이 들어오면 함수아래 기능이 작동한다.
 function scrollIntoView(selector){
