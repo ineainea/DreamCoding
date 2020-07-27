@@ -95,6 +95,47 @@ arrowUp.addEventListener('click', () => {
     scrollIntoView("#home");
 });
 
+//Projects
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.works__projects');
+//각각의 container와 각각의 project 들을 배열로 담는다.
+const projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (e) => {
+    //dataset이 false 또는 undefined면 parentNode의 dataset.filter 값을 사용하겠다는 뜻
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    if(filter == null){
+        return;
+    }
+    //forEach == projects를 한번씩 쓰겠다. (== for문)
+    //방법1
+    projects.forEach((project) => {
+        console.log(project.dataset.type);
+        //fiter가 전부 다 거나, filter가 클릭한 project의 data-filter 값과 동일하다면
+        if(filter === '*' || filter === project.dataset.type){
+            //invisible를 지워서 보여주도록
+            project.classList.remove('invisible');
+        }else{
+            //invisible를 추가해서 안보여지도록
+            project.classList.add('invisible');
+        }
+    });
+
+    //방법2
+    // console.log(`--------------------`);
+    // for(let project of projects){
+    //     console.log(`for(let project of projects) >> ` + project);
+    // }
+
+    //방법3
+    // console.log(`--------------------`);
+    // let project;
+    // for(let i=0; i < projects.length; i++){
+    //     project = projects[i];
+    //     console.log(`for(let i=0; i < projects.length; i++) >> ` + project);
+    // }
+    console.log(filter);
+});
+
 //scrollIntoView()를 구현해서 해당 아이디값이 들어오면 함수아래 기능이 작동한다.
 function scrollIntoView(selector){
     const scrollTo = document.querySelector(selector);

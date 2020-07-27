@@ -210,16 +210,19 @@
         <h1>My Works</h1>
         <h3>Projects</h3>
         <div class="work__categories">
-            <button class="category__btn active">
+<!--button tag 안에 있는 data-filter를 설정,
+Work categories 안에 버튼을 클릭하면 버튼안에 있는 filter 값에 따라서
+그 data-type에 해당하는 것만 보여줌. -->
+            <button class="category__btn active" data-filter="*">
                 All <span class="category__count">3</span>
             </button>
-            <button class="category__btn">
+            <button class="category__btn" data-filter="front-end">
                 Front-end <span class="category__count">2</span>
             </button>
-            <button class="category__btn">
+            <button class="category__btn" data-filter="back-end">
                 Back-end <span class="category__count">1</span>
             </button>
-            <button class="category__btn">
+            <button class="category__btn" data-filter="mobile">
                 Mobile <span class="category__count">0</span>
             </button>
         </div>
@@ -227,7 +230,8 @@
             <a 
                 href="https://github.com/ineainea/kakao-clone-v2" 
                 class="project"
-                target="blank">
+                target="blank"
+                data-type="front-end">
                 <!-- project의 이미지를 올릴부분 -->
                 <img src="images/projects/kakao-clone-v2-removebg.png" 
                      alt="Kakako Talk Clone"
@@ -241,7 +245,8 @@
             <a 
             href="https://github.com/ineainea/Momentum-clone" 
             class="project"
-            target="blank">
+            target="blank"
+            data-type="front-end">
             <!-- project의 이미지를 올릴부분 -->
             <img src="images/projects/Momentum-clone-v2-removebg-preview.png" 
                  alt="Momentum TO-DO List Clone"
