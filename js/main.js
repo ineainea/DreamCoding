@@ -106,19 +106,9 @@ workBtnContainer.addEventListener('click', (e) => {
     if(filter == null){
         return;
     }
-    //forEach == projects를 한번씩 쓰겠다. (== for문)
-    //방법1
-    projects.forEach((project) => {
-        console.log(project.dataset.type);
-        //fiter가 전부 다 거나, filter가 클릭한 project의 data-filter 값과 동일하다면
-        if(filter === '*' || filter === project.dataset.type){
-            //invisible를 지워서 보여주도록
-            project.classList.remove('invisible');
-        }else{
-            //invisible를 추가해서 안보여지도록
-            project.classList.add('invisible');
-        }
-    });
+
+    //Project Animation
+    projectContainer.classList.add('anim-out');
 
     //방법2
     // console.log(`--------------------`);
@@ -133,8 +123,37 @@ workBtnContainer.addEventListener('click', (e) => {
     //     project = projects[i];
     //     console.log(`for(let i=0; i < projects.length; i++) >> ` + project);
     // }
-    console.log(filter);
+    
+    //category-btn를 누른 후 works__projects에 .anim-out이 계속 있어서
+    //project가 .anim-out의 opacity: 0; 를 계속 가지고 있음
+    //1. projectContainer.classList.add('anim-out'); 가 추가된 후
+    //2. setTimeout() 함수를 호출하고, 안에 projects.forEach() 함수가 실행 된 후
+    //3. setTimeout()함수를 통해서 0.3초가 흐른 후 .anim-out 클래스를 제거함.
+    setTimeout(() =>{
+        //forEach == projects를 한번씩 쓰겠다. (== for문)
+        //방법1
+        projects.forEach((project) => {
+            console.log(project.dataset.type);
+            //fiter가 전부 다 거나, filter가 클릭한 project의 data-filter 값과 동일하다면
+            if(filter === '*' || filter === project.dataset.type){
+                //invisible를 지워서 보여주도록
+                project.classList.remove('invisible');
+            }else{
+                //invisible를 추가해서 안보여지도록
+                project.classList.add('invisible');
+            }
+        });
+        projectContainer.classList.remove('anim-out');
+    }, 300)
 });
+
+//Remove selection from the previous item and select the new one
+const active = document.querySelector('.category__btn.selected');
+active.classList.remove('selected');
+//target 즉, 클릭한 것의 nodeName이 BUTTON이면 e.target를 그대로 사용하고
+//아니라면 e.target의 parentNode를 지정한다.
+const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+target.classList.add('selected');
 
 //scrollIntoView()를 구현해서 해당 아이디값이 들어오면 함수아래 기능이 작동한다.
 function scrollIntoView(selector){
