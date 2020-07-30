@@ -150,8 +150,7 @@ h2 {
 /* navbar__menu__item 위로 마우스가 올라갔을 때 */
 .navbar__menu__item:hover
 {
-    border: 1px solid white;
-    border-radius: var(--size-border-radius);
+    border-color: var(--color-white);
     background-color: var(--color-dark-pink);
     
 }

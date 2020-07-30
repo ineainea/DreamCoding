@@ -2,7 +2,8 @@
 실수로 발생할 수 있는 오류가 통과하지 못하도록 엄격하게 한다. */
 'use strict'
 
-// Make navbar transparent when it is on the top
+// ***Make navbar transparent when it is on the top***
+//=======================================================
 //navbar의 Element요소를 navbar에 대입한다.
 const navbar = document.querySelector('#navbar');
 //.getBoundingClientRect()함수를 이용해 navbar Element의 height를 navbarHeight에 대입한다.
@@ -36,7 +37,8 @@ width: 100px; 를 scale(0.5);로(반으로) 줄였을때?
 but, offserWidth는 width: 100px; 를 나타냄
 */
 
-//Handle scrolling when tapping on the navbar menu
+//***Handle scrolling when tapping on the navbar menu***
+//=======================================================
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
 
@@ -57,13 +59,15 @@ navbarMenu.addEventListener('click', (event) => {
     scrollIntoView(link);
 });
 
-//Handle click on "contact me" button on home
+//***Handle click on "contact me" button on home***
+//=======================================================
 const homeContactBtn = document.querySelector('.home__contact');
 homeContactBtn.addEventListener('click', ()=> {
     scrollIntoView('#contact');
 });
 
-//Make home slowly fade to transparent as the window scrolls down
+//***Make home slowly fade to transparent as the window scrolls down***
+//=======================================================
 const home = document.querySelector('.home__container');
 const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
@@ -78,7 +82,8 @@ document.addEventListener('scroll', () => {
     
 });
 
-//Show "arrow up" button when scrolling down
+//***Show "arrow up" button when scrolling down***
+//=======================================================
 const arrowUp = document.querySelector('.arrow-up');
 document.addEventListener('scroll', () => {
     //scroll이 homeheight의 절반을 지났을 때
@@ -91,11 +96,13 @@ document.addEventListener('scroll', () => {
 });
 
 //Handle click on the "arrow up" button
+//=======================================================
 arrowUp.addEventListener('click', () => {
     scrollIntoView("#home");
 });
 
-//Projects
+//***Projects***
+//=======================================================
 const workBtnContainer = document.querySelector('.work__categories');
 const projectContainer = document.querySelector('.works__projects');
 //각각의 container와 각각의 project 들을 배열로 담는다.
@@ -106,6 +113,16 @@ workBtnContainer.addEventListener('click', (e) => {
     if(filter == null){
         return;
     }
+
+//***Remove selection from the previous item and select the new one***
+//=======================================================
+const active = document.querySelector('.category__btn.selected');
+active.classList.remove('selected');
+//target 즉, 클릭한 것의 nodeName이 button tag이면 e.target(=.category__btn)를 그대로 사용하고
+//아니라면 e.target의 parentNode(span의 parentNode니깐 결국 category__btn)를 지정한다.
+const target = 
+    e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+target.classList.add('selected');
 
     //Project Animation
     projectContainer.classList.add('anim-out');
@@ -147,13 +164,7 @@ workBtnContainer.addEventListener('click', (e) => {
     }, 300)
 });
 
-//Remove selection from the previous item and select the new one
-const active = document.querySelector('.category__btn.selected');
-active.classList.remove('selected');
-//target 즉, 클릭한 것의 nodeName이 BUTTON이면 e.target를 그대로 사용하고
-//아니라면 e.target의 parentNode를 지정한다.
-const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
-target.classList.add('selected');
+
 
 //scrollIntoView()를 구현해서 해당 아이디값이 들어오면 함수아래 기능이 작동한다.
 function scrollIntoView(selector){
