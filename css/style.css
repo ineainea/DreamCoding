@@ -172,7 +172,7 @@ h2 {
 /* HOME */
 #home
 {
-    background: url('/images/homebackground.png') center/cover no-repeat;
+    background: url('../images/homebackground.png') center/cover no-repeat;
     padding: 40px;
     padding-top: 100px;
     text-align: center;
